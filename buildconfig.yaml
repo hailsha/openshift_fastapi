@@ -5,13 +5,15 @@ metadata:
 spec:
   source:
     git:
-      uri: https://github.com/hailsha/openshift_fastapi.git
-      ref: main
+      uri: https://github.com/hailsha/openshift_fastapi.git  # Your Git repository URL
+      ref: main  # The branch you want to use (e.g., main)
   strategy:
-    type: Docker
-    dockerStrategy:
-      dockerfilePath: Dockerfile
+    type: Source
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: python:3.12.4  # You can change this to the appropriate version of Python
   output:
     to:
       kind: ImageStreamTag
-      name: fastapi-app:latest
+      name: fastapi-app:latest  # The image tag to store the build output
