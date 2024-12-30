@@ -12,7 +12,7 @@ spec:
     sourceStrategy:
       from:
         kind: ImageStreamTag
-        name: python:3.12.4  # You can change this to the appropriate version of Python
+        name: python:python:3.12-ubi9  # You can change this to the appropriate version of Python
   output:
     to:
       kind: ImageStreamTag
